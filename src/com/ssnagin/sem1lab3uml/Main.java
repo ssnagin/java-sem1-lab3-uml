@@ -4,6 +4,9 @@
  */
 package com.ssnagin.sem1lab3uml;
 
+import java.nio.charset.Charset;
+import com.ssnagin.sem1lab3uml.classes.World;
+
 /**
  *
  * @author developer
@@ -14,18 +17,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Main.intro();
+        
+        World world = new World();
+        world.runSimulation();
     }
-    
-    protected static void intro() {
-        System.out.print("""
-                           _    _ __  __ _      
-                          | |  | |  \/  | |     
-                          | |  | | \  / | |     
-                          | |  | | |\/| | |     
-                          | |__| | |  | | |____ 
-                           \____/|_|  |_|______|                   
-                         """);
-    }
-    
 }
