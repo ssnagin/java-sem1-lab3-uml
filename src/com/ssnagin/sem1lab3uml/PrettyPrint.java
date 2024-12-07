@@ -9,24 +9,25 @@ package com.ssnagin.sem1lab3uml;
  * @author DEVELOPER
  */
 public final class PrettyPrint {
-    public static void log(Object text){
-        PrettyPrint.log(text.toString(), "       ");  
+
+    public static void log(Object text) {
+        PrettyPrint.log(text.toString(), "       ");
     }
-    
+
     public static void log(Object text, String leftSide) {
-            
+
         if (leftSide.length() > 7) {
             leftSide = leftSide.substring(0, 7);
         } else {
             for (int i = 0; i < 7 - leftSide.length(); i++) {
                 leftSide += " ";
-            } 
+            }
         }
-        
-        String prepared = leftSide + "| " + text.toString();        
+
+        String prepared = leftSide + "| " + text.toString();
         PrettyPrint.print(prepared);
     }
-    
+
     public static void print(Object text) {
         System.out.println(text.toString());
     }

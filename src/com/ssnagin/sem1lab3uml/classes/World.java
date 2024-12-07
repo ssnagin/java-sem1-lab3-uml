@@ -19,8 +19,8 @@ public class World {
                         System.getProperty("line.separator"),
                         " __  __           __ ",
                         "/\\ \\/\\ \\  /'\\_/`\\/\\ \\ ",
-                        "\\ \\ \\ \\ \\/\\      \\ \\ \\                  Господь UML создал землю,",
-                        " \\ \\ \\ \\ \\ \\ \\__\\ \\ \\ \\  __             воду, и всё вокруг короче.",
+                        "\\ \\ \\ \\ \\/\\      \\ \\ \\                  Р“РѕСЃРїРѕРґСЊ UML СЃРѕР·РґР°Р» Р·РµРјР»СЋ,",
+                        " \\ \\ \\ \\ \\ \\ \\__\\ \\ \\ \\  __             РІРѕРґСѓ, Рё РІСЃС‘ РІРѕРєСЂСѓРі РєРѕСЂРѕС‡Рµ.",
                         "  \\ \\ \\_\\ \\ \\ \\_/\\ \\ \\ \\ \\ \\",
                         "   \\ \\_____\\ \\_\\\\ \\_\\ \\____/",
                         "    \\/_____/\\/_/ \\/_/\\/___/",
@@ -30,12 +30,14 @@ public class World {
     }
     
     public void runSimulation() {
-        PrettyPrint.log("Господь UML запустил этот совершенный мир...", " ssngn");
+        PrettyPrint.log("Р“РѕСЃРїРѕРґСЊ UML Р·Р°РїСѓСЃС‚РёР» СЌС‚РѕС‚ СЃРѕРІРµСЂС€РµРЅРЅС‹Р№ РјРёСЂ...", " ssngn");
         
         GrainStorage grainStorage = new GrainStorage();
-        CommunityPerson community = new CommunityPerson();
+        Community community = new Community();
         
+        community.doSomeWork();
         
+        community.harvest(grainStorage);
     }
     
 }

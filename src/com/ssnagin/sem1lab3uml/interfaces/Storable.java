@@ -8,7 +8,7 @@ package com.ssnagin.sem1lab3uml.interfaces;
  *
  * @author DEVELOPER
  */
-public interface Plantable {
-
-    public void plant();
+public interface Storable {
+    public void putInside();
+    public void retrieve();
 }

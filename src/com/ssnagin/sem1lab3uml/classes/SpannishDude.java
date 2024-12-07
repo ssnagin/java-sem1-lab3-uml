@@ -4,23 +4,12 @@
  */
 package com.ssnagin.sem1lab3uml.classes;
 
-import com.ssnagin.sem1lab3uml.interfaces.Storable;
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
 
 /**
  *
  * @author DEVELOPER
  */
-public class GrainStorage implements Storable {
+public class SpannishDude extends CommunityPerson {
     
-    public int capacity;
-    
-    @Override
-    public void putInside(Object object) {
-        
-    }
-    
-    @Override
-    public void retrieve() {
-        
-    }
 }

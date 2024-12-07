@@ -4,23 +4,19 @@
  */
 package com.ssnagin.sem1lab3uml.classes;
 
-import com.ssnagin.sem1lab3uml.interfaces.Storable;
+import com.ssnagin.sem1lab3uml.interfaces.Eatable;
 
 /**
  *
  * @author DEVELOPER
  */
-public class GrainStorage implements Storable {
-    
-    public int capacity;
-    
+public class Bread implements Eatable {
     @Override
-    public void putInside(Object object) {
-        
+    public void make() {
+        this.bake();
     }
     
-    @Override
-    public void retrieve() {
+    private void bake() {
         
     }
 }

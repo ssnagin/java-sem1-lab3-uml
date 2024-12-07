@@ -9,5 +9,6 @@ package com.ssnagin.sem1lab3uml.interfaces;
  * @author DEVELOPER
  */
 public interface Harvestable {
+
     public void harvest();
 }

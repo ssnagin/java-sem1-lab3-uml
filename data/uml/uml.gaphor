@@ -1417,6 +1417,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <matrix>
 <val>(1.0, 0.0, 0.0, 1.0, 823.1363967122325, 460.9001421724048)</val>
 </matrix>
@@ -1434,6 +1437,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="5f1fe82c-b446-11ef-aaba-3f0d8b16ecd7"/>
 </subject>
@@ -1470,6 +1476,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="6162f853-b446-11ef-b092-3f0d8b16ecd7"/>
 </subject>
@@ -1509,6 +1518,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="85bf6e9a-b446-11ef-933c-3f0d8b16ecd7"/>
 </subject>
@@ -1581,6 +1593,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="8be51a43-b446-11ef-84a3-3f0d8b16ecd7"/>
 </subject>
@@ -1653,6 +1668,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="900bbacd-b446-11ef-91b3-3f0d8b16ecd7"/>
 </subject>
@@ -1722,6 +1740,9 @@ harvest(
 <horizontal>
 <val>0</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="abe6711b-b446-11ef-8dbb-3f0d8b16ecd7"/>
 </subject>
@@ -1755,6 +1776,12 @@ harvest(
 <diagram>
 <ref refid="71af93f9-b434-11ef-9901-3f0d8b16ecd7"/>
 </diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="ae3891b3-b446-11ef-bc71-3f0d8b16ecd7"/>
 </subject>
@@ -1791,6 +1818,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="b46e038a-b446-11ef-9cf0-3f0d8b16ecd7"/>
 </subject>
@@ -1827,6 +1857,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="b99734f3-b446-11ef-a94e-3f0d8b16ecd7"/>
 </subject>
@@ -1863,6 +1896,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="063b808f-b447-11ef-b86e-3f0d8b16ecd7"/>
 </subject>
@@ -1899,6 +1935,12 @@ harvest(
 <head_subject>
 <ref refid="437a9672-b447-11ef-9afd-3f0d8b16ecd7"/>
 </head_subject>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="437a3cae-b447-11ef-aae0-3f0d8b16ecd7"/>
 </subject>
@@ -2037,6 +2079,9 @@ harvest(
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="e9e17f57-b447-11ef-b6c2-3f0d8b16ecd7"/>
 </subject>
@@ -2227,6 +2272,9 @@ make() --&gt; bread()</val>
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="9abfb572-b448-11ef-a7bc-3f0d8b16ecd7"/>
 </subject>
@@ -2266,6 +2314,9 @@ make() --&gt; bread()</val>
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="a473534a-b448-11ef-81cd-3f0d8b16ecd7"/>
 </subject>
@@ -2335,6 +2386,9 @@ make() --&gt; bread()</val>
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="b26ee822-b448-11ef-a823-3f0d8b16ecd7"/>
 </subject>
@@ -2401,6 +2455,12 @@ make() --&gt; bread()</val>
 <head_subject>
 <ref refid="bc61a247-b448-11ef-93ce-3f0d8b16ecd7"/>
 </head_subject>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="bc616372-b448-11ef-b5be-3f0d8b16ecd7"/>
 </subject>
@@ -2557,6 +2617,9 @@ make() --&gt; bread()</val>
 <horizontal>
 <val>1</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="8c9bd2db-b484-11ef-bc86-3f0d8b16ecd7"/>
 </subject>
@@ -3027,6 +3090,12 @@ putInside() -- мы отсыпаем зерна в общее хранилище
 <head_subject>
 <ref refid="0f8f5950-b48e-11ef-ae6d-3f0d8b16ecd7"/>
 </head_subject>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="0f8e97c6-b48e-11ef-8d93-3f0d8b16ecd7"/>
 </subject>
@@ -3037,7 +3106,7 @@ putInside() -- мы отсыпаем зерна в общее хранилище
 <val>(1.0, 0.0, 0.0, 1.0, 1402.9263312638884, 1077.569110440404)</val>
 </matrix>
 <points>
-<val>[(-886.9363312638886, -934.3743957797597), (-921.6862012432175, -697.4537200837887), (-921.6862012432175, -504.36911044040403)]</val>
+<val>[(-886.9363312638886, -934.3743957797597), (-921.6862012432175, -934.3743957797597), (-921.6862012432175, -504.36911044040403)]</val>
 </points>
 <head-connection>
 <ref refid="9adc3de1-b441-11ef-b790-3f0d8b16ecd7"/>
@@ -3050,6 +3119,12 @@ putInside() -- мы отсыпаем зерна в общее хранилище
 <diagram>
 <ref refid="71af93f9-b434-11ef-9901-3f0d8b16ecd7"/>
 </diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="c2ee5d1d-b48e-11ef-aa5d-3f0d8b16ecd7"/>
 </subject>
@@ -3231,6 +3306,9 @@ putInside() -- мы отсыпаем зерна в общее хранилище
 <horizontal>
 <val>0</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="001026bc-b491-11ef-9a7c-3f0d8b16ecd7"/>
 </subject>
@@ -3267,6 +3345,12 @@ putInside() -- мы отсыпаем зерна в общее хранилище
 <head_subject>
 <ref refid="bac4926c-b491-11ef-8310-3f0d8b16ecd7"/>
 </head_subject>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="bac32477-b491-11ef-ac55-3f0d8b16ecd7"/>
 </subject>

@@ -4,10 +4,15 @@
  */
 package com.ssnagin.sem1lab3uml.abstractClasses;
 
+import com.ssnagin.sem1lab3uml.classes.Bag;
+
 /**
  *
  * @author DEVELOPER
  */
-public class CommunityPerson {
+public abstract class CommunityPerson {
+    public String name;
+    public Bag bag;
+    
     
 }
