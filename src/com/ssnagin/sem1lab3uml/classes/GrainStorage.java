@@ -4,18 +4,23 @@
  */
 package com.ssnagin.sem1lab3uml.classes;
 
-import com.ssnagin.sem1lab3uml.interfaces.Storable;
+import com.ssnagin.sem1lab3uml.interfaces.Storage;
 
 /**
  *
  * @author DEVELOPER
  */
-public class GrainStorage implements Storable {
+public class GrainStorage implements Storage {
     
     public int capacity;
+   
+    @Override
+    public void putInside() {
+        
+    }
     
     @Override
-    public void putInside(Object object) {
+    public void putInside(Bag bag) {
         
     }
     

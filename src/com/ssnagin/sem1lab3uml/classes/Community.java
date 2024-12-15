@@ -22,7 +22,7 @@ public class Community {
     }
 
     public Community(List<CommunityPerson> people) {
-        this.memberList = people;
+//        this.memberList = people;
         this();
     }
 

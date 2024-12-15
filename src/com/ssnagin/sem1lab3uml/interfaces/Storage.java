@@ -4,11 +4,15 @@
  */
 package com.ssnagin.sem1lab3uml.interfaces;
 
+import com.ssnagin.sem1lab3uml.classes.Bag;
+
 /**
  *
  * @author DEVELOPER
  */
-public interface Storable {
+public interface Storage {
     public void putInside();
+    public void putInside(Bag bag);
+
     public void retrieve();
 }
