@@ -4,6 +4,7 @@
  */
 package com.ssnagin.sem1lab3uml.classes;
 
+import com.ssnagin.sem1lab3uml.PrettyPrint;
 import com.ssnagin.sem1lab3uml.interfaces.Eatable;
 
 /**
@@ -17,6 +18,6 @@ public class Bread implements Eatable {
     }
     
     private void bake() {
-        
+        PrettyPrint.log("Испёкся", "ХЛЕБ");
     }
 }

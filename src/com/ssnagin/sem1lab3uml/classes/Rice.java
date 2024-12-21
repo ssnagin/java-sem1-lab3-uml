@@ -14,31 +14,34 @@ import com.ssnagin.sem1lab3uml.enums.GrainStatus;
  */
 public class Rice extends GrainCulture {
     
+    public final String NAME = "Р РРЎ";
+
+    
     public Rice(int amount) {
         super(amount);
     }
     
     @Override
     public void plant() {
-        PrettyPrint.log("Посажен в количестве " + Integer.toString(amount) + 
-                " штук. Однако рис рос на стероидах, поэтому:", "РИС");
+        PrettyPrint.log("Р‘С‹Р» РїРѕСЃР°Р¶РµРЅ РІ РєРѕР»РёС‡РµСЃС‚РІРµ " + Integer.toString(originalAmount) + 
+                "", this.NAME);
         setStatus(GrainStatus.GROWED);
     }
         
     @Override
     public void harvest() {
         setStatus(GrainStatus.HARVESTED);
-        this.amount = this.originalAmount * 2;
+        this.amount = this.originalAmount * 10;
         PrettyPrint.log(
-                "Собрал рис в количестве " + 
+                "РџР°СЂС‚РёСЏ РіРѕСЂРґРёС‚СЃСЏ РІР°РјРё! +" + 
                 Integer.toString(this.amount) + 
-                " единиц!"
+                " СЃРѕР±СЂР°РЅРѕ!", NAME
         );
     }
     
     @Override
     public void setStatus(GrainStatus status) {
-        PrettyPrint.log("Поменяло статус на " + status.toString(), "РИС");
+        PrettyPrint.log("Р РµС€РёР» РёР·РјРµРЅРёС‚СЊ СЃРІРѕР№ СЃС‚Р°С‚СѓСЃ РЅР° " + status.toString(), NAME);
         this.status = status;
     }
 }

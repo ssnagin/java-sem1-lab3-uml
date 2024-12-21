@@ -10,9 +10,7 @@ import com.ssnagin.sem1lab3uml.classes.Bag;
  *
  * @author DEVELOPER
  */
-public interface Storage {
+public interface Storable {
     public void putInside();
-    public void putInside(Bag bag);
-
-    public void retrieve();
+//    public void putInside(Bag bag);
 }

@@ -4,16 +4,20 @@
  */
 package com.ssnagin.sem1lab3uml.classes;
 
-import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+import com.ssnagin.sem1lab3uml.interfaces.Storable;
 
 /**
  *
- * @author DEVELOPER
+ * @author developer
  */
-public class Member extends CommunityPerson {
-    public Member(String name) {
-        super(name);
+public class Basket implements Storable {
+    
+    public void getSize() {
+        
     }
     
     
+    public void putInside() {
+        
+    }
 }

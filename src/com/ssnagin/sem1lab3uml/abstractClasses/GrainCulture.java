@@ -18,7 +18,7 @@ public abstract class GrainCulture implements Harvestable, Plantable {
     public int amount;
     public int originalAmount;
     
-    public GrainStatus status;
+    protected GrainStatus status;
     
     public abstract void harvest();
     
@@ -32,7 +32,7 @@ public abstract class GrainCulture implements Harvestable, Plantable {
     }
     
     public void setStatus(GrainStatus status) {
-        PrettyPrint.log("Ïîìåíÿëî ñòàòóñ íà " + status.toString(), "ÇÅĞÍÎ");
+        PrettyPrint.log("Ğ˜Ğ·Ğ¼ĞµĞ½Ğ¸Ğ»Ğ¾ ÑÑ‚Ğ°Ñ‚ÑƒÑ Ğ½Ğ° " + status.toString(), "Ğ—Ğš");
         this.status = status;
     }
     public GrainStatus getStatus() {

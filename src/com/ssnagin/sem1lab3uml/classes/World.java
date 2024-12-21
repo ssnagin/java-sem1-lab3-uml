@@ -6,6 +6,8 @@ package com.ssnagin.sem1lab3uml.classes;
 
 import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
 import com.ssnagin.sem1lab3uml.PrettyPrint;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -33,11 +35,30 @@ public class World {
         PrettyPrint.log("Господь UML запустил этот совершенный мир...", " ssngn");
         
         GrainStorage grainStorage = new GrainStorage();
-        Community community = new Community();
+        
+        // Подготовим наших жильцов:
+        
+        List<CommunityPerson> people = new ArrayList<>();
+
+        CommunityPerson me = new MainCharacter("Ггерой");
+        
+        people.add(me); // я
+        people.add(new SpannishDude("Славянин", me)); // испанец
+        
+        for (int i = 0; i < 14; i++) {
+            people.add(new Member("Чел " + Integer.toString(i + 1)));
+        }
+        
+        Community community = new Community(people);
         
         community.doSomeWork();
         
+        // Собираем урожай:
         community.harvest(grainStorage);
+
+        community.makeBaskets();
+        
+        PrettyPrint.log("Господь решил, что пока что хватит людишек на сегодня...", "ssngn");
     }
     
 }

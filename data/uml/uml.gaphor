@@ -23,18 +23,16 @@
 <ref refid="c8d96de0-b43f-11ef-87ff-3f0d8b16ecd7"/>
 <ref refid="69bf1a88-b440-11ef-8535-3f0d8b16ecd7"/>
 <ref refid="9adc3de1-b441-11ef-b790-3f0d8b16ecd7"/>
-<ref refid="bed69e28-b445-11ef-b02b-3f0d8b16ecd7"/>
 <ref refid="de17297b-b447-11ef-98d4-3f0d8b16ecd7"/>
 <ref refid="18f3b4aa-b448-11ef-83e5-3f0d8b16ecd7"/>
 <ref refid="38c122e4-b448-11ef-a2f4-3f0d8b16ecd7"/>
 <ref refid="755b55f7-b484-11ef-b256-3f0d8b16ecd7"/>
-<ref refid="296bf765-b489-11ef-8bf8-3f0d8b16ecd7"/>
 <ref refid="42a829b2-b489-11ef-a7bb-3f0d8b16ecd7"/>
 <ref refid="a2b12d0f-b489-11ef-828b-3f0d8b16ecd7"/>
+<ref refid="296bf765-b489-11ef-8bf8-3f0d8b16ecd7"/>
 <ref refid="5a5f1b89-b48f-11ef-9009-3f0d8b16ecd7"/>
 <ref refid="e72f32ad-b495-11ef-8a80-3f0d8b16ecd7"/>
 <ref refid="03364316-b496-11ef-bf46-3f0d8b16ecd7"/>
-<ref refid="53d3ed03-b446-11ef-ba34-3f0d8b16ecd7"/>
 <ref refid="59818ebf-b446-11ef-9464-3f0d8b16ecd7"/>
 <ref refid="5e378f50-b446-11ef-85f7-3f0d8b16ecd7"/>
 <ref refid="6064fcf6-b446-11ef-916a-3f0d8b16ecd7"/>
@@ -188,11 +186,6 @@
 </ownedParameter>
 </Operation>
 <Class id="cfc21356-b439-11ef-9c22-3f0d8b16ecd7">
-<clientDependency>
-<reflist>
-<ref refid="54a8a9a1-b446-11ef-9ced-3f0d8b16ecd7"/>
-</reflist>
-</clientDependency>
 <isAbstract>
 <val>1</val>
 </isAbstract>
@@ -1306,60 +1299,6 @@ harvest(
 <val>doSomeWork</val>
 </name>
 </Operation>
-<Interface id="bed5dd46-b445-11ef-8d1d-3f0d8b16ecd7">
-<name>
-<val>Creature</val>
-</name>
-<ownedAttribute>
-<reflist>
-<ref refid="cf33227e-b445-11ef-a1c0-3f0d8b16ecd7"/>
-</reflist>
-</ownedAttribute>
-<presentation>
-<reflist>
-<ref refid="bed69e28-b445-11ef-b02b-3f0d8b16ecd7"/>
-</reflist>
-</presentation>
-<supplierDependency>
-<reflist>
-<ref refid="54a8a9a1-b446-11ef-9ced-3f0d8b16ecd7"/>
-</reflist>
-</supplierDependency>
-</Interface>
-<InterfaceItem id="bed69e28-b445-11ef-b02b-3f0d8b16ecd7">
-<matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 1993.0, 26.120000000000005)</val>
-</matrix>
-<top-left>
-<val>(0.0, 0.0)</val>
-</top-left>
-<width>
-<val>116.0</val>
-</width>
-<height>
-<val>91.0</val>
-</height>
-<diagram>
-<ref refid="71af93f9-b434-11ef-9901-3f0d8b16ecd7"/>
-</diagram>
-<subject>
-<ref refid="bed5dd46-b445-11ef-8d1d-3f0d8b16ecd7"/>
-</subject>
-<folded>
-<val>0</val>
-</folded>
-</InterfaceItem>
-<Property id="cf33227e-b445-11ef-a1c0-3f0d8b16ecd7">
-<interface_>
-<ref refid="bed5dd46-b445-11ef-8d1d-3f0d8b16ecd7"/>
-</interface_>
-<name>
-<val>name</val>
-</name>
-<typeValue>
-<val>String</val>
-</typeValue>
-</Property>
 <Operation id="0ff6d76c-b446-11ef-9954-3f0d8b16ecd7">
 <class_>
 <ref refid="9adb8b68-b441-11ef-91f0-3f0d8b16ecd7"/>
@@ -1371,45 +1310,6 @@ harvest(
 <val>World</val>
 </name>
 </Operation>
-<InterfaceRealizationItem id="53d3ed03-b446-11ef-ba34-3f0d8b16ecd7">
-<diagram>
-<ref refid="71af93f9-b434-11ef-9901-3f0d8b16ecd7"/>
-</diagram>
-<horizontal>
-<val>0</val>
-</horizontal>
-<orthogonal>
-<val>0</val>
-</orthogonal>
-<subject>
-<ref refid="54a8a9a1-b446-11ef-9ced-3f0d8b16ecd7"/>
-</subject>
-<matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 894.275190657545, 218.33362911088136)</val>
-</matrix>
-<points>
-<val>[(1156.724809342455, -101.21362911088136), (1156.724809342455, 34.866370889118684)]</val>
-</points>
-<head-connection>
-<ref refid="bed69e28-b445-11ef-b02b-3f0d8b16ecd7"/>
-</head-connection>
-<tail-connection>
-<ref refid="cfc2ae1a-b439-11ef-a220-3f0d8b16ecd7"/>
-</tail-connection>
-</InterfaceRealizationItem>
-<InterfaceRealization id="54a8a9a1-b446-11ef-9ced-3f0d8b16ecd7">
-<client>
-<ref refid="cfc21356-b439-11ef-9c22-3f0d8b16ecd7"/>
-</client>
-<presentation>
-<reflist>
-<ref refid="53d3ed03-b446-11ef-ba34-3f0d8b16ecd7"/>
-</reflist>
-</presentation>
-<supplier>
-<ref refid="bed5dd46-b445-11ef-8d1d-3f0d8b16ecd7"/>
-</supplier>
-</InterfaceRealization>
 <GeneralizationItem id="59818ebf-b446-11ef-9464-3f0d8b16ecd7">
 <diagram>
 <ref refid="71af93f9-b434-11ef-9901-3f0d8b16ecd7"/>

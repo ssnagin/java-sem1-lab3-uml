@@ -8,13 +8,13 @@ package com.ssnagin.sem1lab3uml.exceptions;
  *
  * @author DEVELOPER
  */
-public class StorageOwerflow extends Exception {
+public class StorageOverflow extends Exception {
 
     /**
      * Creates a new instance of <code>StorageOwerflow</code> without detail
      * message.
      */
-    public StorageOwerflow() {
+    public StorageOverflow() {
     }
 
     /**
@@ -23,7 +23,7 @@ public class StorageOwerflow extends Exception {
      *
      * @param msg the detail message.
      */
-    public StorageOwerflow(String msg) {
+    public StorageOverflow(String msg) {
         super(msg);
     }
 }
