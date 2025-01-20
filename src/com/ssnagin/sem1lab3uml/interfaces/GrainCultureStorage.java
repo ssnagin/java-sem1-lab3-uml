@@ -4,13 +4,13 @@
  */
 package com.ssnagin.sem1lab3uml.interfaces;
 
-import com.ssnagin.sem1lab3uml.classes.Bag;
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.exceptions.StorageOverflow;
 
 /**
  *
  * @author DEVELOPER
  */
-public interface Storable {
-    public void putInside();
-//    public void putInside(Bag bag);
+public interface GrainCultureStorage {
+    public void putInside(GrainCulture grainCulture) throws StorageOverflow;
 }

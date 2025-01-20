@@ -1,0 +1,1155 @@
+=== ./classes/SpannishDude.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+import java.util.List;
+import java.util.Objects;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class SpannishDude extends CommunityPerson {
+    
+    public CommunityPerson personToHarras;
+    
+    public SpannishDude(String name, CommunityPerson person) {
+        super(name);
+        personToHarras = person;
+    }
+    
+    public void harrasPerson(CommunityPerson person) {
+        PrettyPrint.log("Какой же ты, " + person.name + ", плохой, аяяй!", "ИСПАНЕЦ");
+    }
+    
+    @Override
+    public List<Basket> makeBaskets() {
+        harrasPerson(personToHarras);
+        return super.makeBaskets();
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        SpannishDude other = (SpannishDude) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.name.equals(other.name) &&
+                this.bag.equals(other.bag) &&
+                this.personToHarras.equals(other.personToHarras);
+    }
+    
+    @Override
+    public int hashCode() {
+        return 14 * Objects.hashCode(this.name) + 
+                3 * Objects.hashCode(this.bag) +
+                2 * Objects.hashCode(this.personToHarras);
+    }
+    
+    @Override
+    public String toString() {
+        return super.toString()
+                + ",personToHarras=" + personToHarras.toString() + "]";
+    }
+}
+=== ./classes/Basket.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.interfaces.GrainCultureStorage;
+import java.util.List;
+import java.util.Objects;
+
+/**
+ * Baskets are done by members at the end, 
+ * they exist with "Bag"s functional.
+ * @author developer
+ */
+public class Basket implements GrainCultureStorage {
+    
+    public List<GrainCulture> grains;
+    public int capacity;
+    
+    public void putInside(GrainCulture grainCulture) {
+        this.grains.add(grainCulture);
+    }
+    
+    public List<GrainCulture> retrieve() {
+        return this.grains;
+    }
+    
+    protected int calculateTotalWeight() {
+        
+        int result = 0;
+        
+        for (int i = 0; i < grains.size(); i++) {
+            result += grains.get(i).amount;
+        }
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        Basket other = (Basket) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.grains.equals(other.grains) &&
+                capacity == other.capacity;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 9 * Objects.hashCode(this.grains) + 5 * Objects.hashCode(this.capacity);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[grains=" + grains.toString()
+                + ",capacity=" + Integer.toString(capacity) + "]";
+    }
+}
+=== ./classes/Bread.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.interfaces.Eatable;
+import java.util.Objects;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class Bread implements Eatable {
+    @Override
+    public void make() {
+        this.bake();
+    }
+    
+    private void bake() {
+        PrettyPrint.log("Испёкся", "ХЛЕБ");
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        Bread other = (Bread) otherObject;
+        
+        // Если классы совпадают, считаем, что объекты равны (нет полей)
+        return true;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 262813375; // произвольное число тк нет полей
+    }
+    
+    
+    @Override
+    public String toString() {
+        return getClass().getName() + "[]"; // нет полей, возвращаем имя класса
+    }
+}
+=== ./classes/Member.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class Member extends CommunityPerson {
+    public Member(String name) {
+        super(name);
+    }
+}
+=== ./classes/World.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author developer
+ */
+public class World {
+    
+    public World() {
+        PrettyPrint.print(
+                String.join(
+                        System.getProperty("line.separator"),
+                        " __  __           __ ",
+                        "/\\ \\/\\ \\  /'\\_/`\\/\\ \\ ",
+                        "\\ \\ \\ \\ \\/\\      \\ \\ \\                  Господь UML создал землю,",
+                        " \\ \\ \\ \\ \\ \\ \\__\\ \\ \\ \\  __             воду, и всё вокруг короче.",
+                        "  \\ \\ \\_\\ \\ \\ \\_/\\ \\ \\ \\ \\ \\",
+                        "   \\ \\_____\\ \\_\\\\ \\_\\ \\____/",
+                        "    \\/_____/\\/_/ \\/_/\\/___/",
+                        " "
+                )
+        );
+    }
+    
+    public void runSimulation() {
+        PrettyPrint.log("Господь UML запустил этот совершенный мир...", " ssngn");
+        
+        GrainStorage grainStorage = new GrainStorage();
+        
+        // Подготовим наших жильцов:
+        
+        List<CommunityPerson> people = new ArrayList<>();
+
+        CommunityPerson me = new MainCharacter("Ггерой");
+        
+        people.add(me); // я
+        people.add(new SpannishDude("ИспанеЦ", me)); // испанец
+        
+        for (int i = 0; i < 13; i++) {
+            people.add(new Member("Чел " + Integer.toString(i + 1)));
+        }
+        
+        Community community = new Community(people);
+        
+        community.doSomeWork();
+        
+        // Собираем урожай:
+        community.harvest(grainStorage);
+
+        community.makeBaskets();
+        
+        PrettyPrint.log("Господь решил, что пока что хватит людишек на сегодня...", "ssngn");
+    }
+    
+}
+=== ./classes/GrainStorage.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import java.util.ArrayList;
+import java.util.List;
+import com.ssnagin.sem1lab3uml.interfaces.GrainCultureStorage;
+import java.util.Objects;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class GrainStorage implements GrainCultureStorage {
+    
+    public int capacity;
+    public List<GrainCulture> grains = new ArrayList<GrainCulture>();
+    
+    public int getSize() {
+        return 0;
+    }
+   
+    public List<GrainCulture> retrieve() {
+        return this.grains;
+    }
+    
+    public void putInside(GrainCulture grainCulture) {
+        this.grains.add(grainCulture);
+    }
+    
+    public void putInside(List<GrainCulture> grainCultures) {
+        this.grains.addAll(grainCultures);
+    }
+    
+    public void putInside(Bag bag) {
+        this.putInside(bag.retrieve());
+    }
+    
+    public int calculateTotalWeight() {
+        int result = 0;
+        for (int i = 0; i < grains.size(); i++) {
+            result += grains.get(i).amount;
+        }
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        GrainStorage other = (GrainStorage) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.grains.equals(other.grains) &&
+                capacity == other.capacity;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 14 * Objects.hashCode(this.grains) + 3 * Objects.hashCode(this.capacity);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[grains=" + grains.toString()
+                + ",capacity=" + Integer.toString(capacity) + "]";
+    }
+}
+=== ./classes/Barley.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.enums.GrainStatus;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class Barley extends GrainCulture {
+    
+    public final String NAME = "ЯЧМЕНЬ";
+
+    
+    public Barley(int amount) {
+        super(amount);
+    }
+    
+    @Override
+    public void plant() {
+        PrettyPrint.log("Посажен (" + Integer.toString(this.originalAmount) + ")", "Ячмень");
+        setStatus(GrainStatus.GROWED);
+    }
+    
+    @Override
+    public void harvest() {
+        setStatus(GrainStatus.HARVESTED);
+        this.amount = this.originalAmount * 10;
+        PrettyPrint.log(
+                "С поля собрано " + 
+                Integer.toString(this.amount) + 
+                " ячменя!", NAME
+        );
+    }
+    
+    @Override
+    public void setStatus(GrainStatus status) {
+        PrettyPrint.log("Изменило статус на " + status.toString(), NAME);
+        this.status = status;
+    }
+}
+=== ./classes/Rice.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.enums.GrainStatus;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class Rice extends GrainCulture {
+    
+    public final String NAME = "РИС";
+    
+    public Rice(int amount) {
+        super(amount);
+    }
+    
+    @Override
+    public void plant() {
+        PrettyPrint.log("Был посажен в количестве " + Integer.toString(originalAmount) + 
+                "", this.NAME);
+        setStatus(GrainStatus.GROWED);
+        
+    }
+        
+    @Override
+    public void harvest() {
+        setStatus(GrainStatus.HARVESTED);
+        this.amount = this.originalAmount * 10;
+        PrettyPrint.log(
+                "Партия гордится вами! +" + 
+                Integer.toString(this.amount) + 
+                " собрано!", NAME
+        );
+    }
+    
+    @Override
+    public void setStatus(GrainStatus status) {
+        PrettyPrint.log("Решил изменить свой статус на " + status.toString(), NAME);
+        this.status = status;
+    }
+}
+=== ./classes/BreadStorage.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.interfaces.GrainCultureStorage;
+import java.util.List;
+import java.util.Objects;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class BreadStorage implements GrainCultureStorage {
+    public List<Bread> bread;
+    
+    public BreadStorage() {
+        
+    }
+    
+    public void putInside(GrainCulture grainCulture) {
+        
+    }
+    
+    public void retrieve() {
+        
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        BreadStorage other = (BreadStorage) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.bread.equals(other.bread);
+    }
+    
+    @Override
+    public int hashCode() {
+        return 3 * Objects.hashCode(this.bread);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[bread="+bread+"]";
+    }
+}
+=== ./classes/MainCharacter.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+import java.util.Objects;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class MainCharacter extends CommunityPerson {
+    public boolean pletnyNeed = false;
+    
+    public MainCharacter(String name) {
+        super(name);
+    }
+    
+    public boolean getPletnyNeed() {
+        return this.pletnyNeed;
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        MainCharacter other = (MainCharacter) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.name.equals(other.name) &&
+                this.bag.equals(other.bag) &&
+                this.pletnyNeed == other.pletnyNeed;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 14 * Objects.hashCode(this.name) + 
+                3 * Objects.hashCode(this.bag) +
+                2 * Objects.hashCode(this.pletnyNeed);
+    }
+    
+    @Override
+    public String toString() {
+        return super.toString()
+                + "[pletnyNeed=" + Boolean.toString(pletnyNeed) + "]";
+    }
+}
+=== ./classes/Community.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class Community {
+
+    public List<CommunityPerson> memberList = new ArrayList<CommunityPerson>();
+
+    public Community() {
+        this(null);
+    }
+
+    public Community(List<CommunityPerson> people) {
+        if (people != null) {
+            this.addMembers(people);
+        }
+        
+        PrettyPrint.log("Успешно сформировалась", "ОБЩИНА");
+    }
+
+    public void addMember(CommunityPerson person) {
+        PrettyPrint.log("Появился с сумкой на " + 
+        Integer.toString(person.bag.getCapacity()) + 
+        " ед. емкости", person.name);
+        this.memberList.add(person);
+    }
+    
+    public void addMembers(List<CommunityPerson> person) {
+        for (int i = 0; i < person.size(); i++) {
+            addMember(person.get(i));
+        }
+    }
+
+    public void removeMember(CommunityPerson person) {
+        this.memberList.remove(person);
+    }
+
+    public void harvest(GrainStorage grainStorage) {
+        PrettyPrint.log("Начала собирать урожай", "ОБЩИНА");
+        
+        Random random = new Random();
+        
+        List<GrainCulture> field = new ArrayList<GrainCulture>();
+
+        for (int i = 0; i < memberList.size(); i++) {
+            CommunityPerson person = memberList.get(i);
+            GrainCulture randomGrain;
+            
+            switch (random.nextInt(2)) {
+                case 0:
+                    randomGrain = new Rice(10);
+                    break;
+                case 1:
+                    randomGrain = new Barley(10);
+                    break;
+                default:
+                    randomGrain = new Rice(10);
+                    break;
+            }
+            
+            field.add(person.plant(randomGrain));
+        }
+        PrettyPrint.log("ВСЁ ПОСАЖЕНО", "ПОЛЕ");
+        for (int i = 0; i < field.size(); i++) {
+            CommunityPerson person = memberList.get(i);
+            GrainCulture grain = field.get(i);
+            
+            person.harvest(grain);
+            
+            grainStorage.putInside(person.bag);
+        }
+        
+        PrettyPrint.log("Закончила собирать урожай в кол-ве " + grainStorage.calculateTotalWeight(), "ОБЩИНА");
+    }
+
+    public void doSomeWork() {
+        PrettyPrint.log("Делают какую-то работу...", "ОБЩИНА");
+    }
+    
+    public void makeBaskets() {
+        PrettyPrint.log("Плетут корзины...", "ОБЩИНА");
+        
+        for (int i = 0; i < memberList.size(); i++) {
+            CommunityPerson person = memberList.get(i);
+            person.makeBaskets();
+        }
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        Community other = (Community) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.memberList.equals(other.memberList);
+    }
+    
+    @Override
+    public int hashCode() {
+        return 8 * Objects.hashCode(this.memberList);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[memberList="+memberList.toString()
+                + "]";
+    }
+    
+}
+=== ./classes/Bag.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.classes;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.exceptions.StorageOverflow;
+import java.util.ArrayList;
+import java.util.List;
+import com.ssnagin.sem1lab3uml.interfaces.GrainCultureStorage;
+import java.util.Arrays;
+import java.util.Objects;
+
+/**
+ * 
+ * @author DEVELOPER
+ */
+public class Bag implements GrainCultureStorage {
+    public List<GrainCulture> grains;
+    private int capacity;
+    
+    public Bag(int capacity) {
+        this.capacity = capacity;
+        this.grains = new ArrayList<GrainCulture>();
+    }
+    
+    public void putInside(GrainCulture grainCulture) throws StorageOverflow {
+        
+        // Если слишком тяжело для сумки, то вылезаем в ошибку:
+        if (grainCulture.amount + this.calculateTotalWeight() > capacity) {
+            throw new StorageOverflow();
+        }
+        
+        this.grains.add(grainCulture);
+    }
+    
+    // getter
+    public int getCapacity() {
+        return this.capacity;
+    }
+    
+    public List<GrainCulture> retrieve() {
+        return this.grains;
+    }
+    
+    protected int calculateTotalWeight() {
+        
+        int result = 0;
+        
+        for (int i = 0; i < grains.size(); i++) {
+            result += grains.get(i).amount;
+        }
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        Bag other = (Bag) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.grains.equals(other.grains) &&
+                capacity == other.capacity;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 11 * Objects.hashCode(this.grains) + 4 * Objects.hashCode(this.capacity);
+    }
+    
+}
+=== ./interfaces/Eatable.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.interfaces;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public interface Eatable {
+    public void make();
+}
+=== ./interfaces/GrainCultureStorage.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.interfaces;
+
+import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
+import com.ssnagin.sem1lab3uml.exceptions.StorageOverflow;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public interface GrainCultureStorage {
+    public void putInside(GrainCulture grainCulture) throws StorageOverflow;
+}=== ./interfaces/Harvestable.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.interfaces;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public interface Harvestable {
+
+    public void harvest();
+}
+=== ./interfaces/Plantable.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.interfaces;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public interface Plantable {
+
+    public void plant();
+}
+=== ./abstractClasses/CommunityPerson.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.abstractClasses;
+
+import com.ssnagin.sem1lab3uml.classes.Bag;
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.classes.Basket;
+import com.ssnagin.sem1lab3uml.exceptions.StorageOverflow;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public abstract class CommunityPerson {
+    public String name;
+    public Bag bag;
+    
+    public CommunityPerson(String name) { 
+        this(name, new Bag(new Random().nextInt(255) + 1));
+    }
+    
+    public CommunityPerson(String name, Bag bag) {
+        this.name = name;
+        this.bag = bag;
+    }
+    
+    public CommunityPerson(String name, int bagCapacity) {
+        this(name, new Bag(bagCapacity));
+    }
+    
+    public void harvest(GrainCulture grain) {
+        try {
+            grain.harvest();
+            bag.putInside(grain);
+        } catch (StorageOverflow storageOverflow) {
+            PrettyPrint.log(
+                    "Слишком много урожая надо было взять, поэтому чел просто забил на него! ("
+                            + storageOverflow + ")", this.name);
+        }
+        
+    }
+    
+    public List<Basket> makeBaskets() {
+        
+        int randomNumber = new Random().nextInt(3) + 1;
+
+        PrettyPrint.log(String.format(
+                "Сделал какие-то карзиночки в количестве %d шт.", 
+                randomNumber), 
+                this.name);
+        
+        List<Basket> baskets = new ArrayList<Basket>();
+        
+        for (int i = 0; i < randomNumber; i++) {
+            baskets.add(new Basket());
+        }
+        
+        return baskets;
+    }
+    
+    public void doSomeWork() {
+        PrettyPrint.log("Делает какую-то работу...", this.name);
+    }
+    
+    public GrainCulture plant(GrainCulture grainCulture) {
+        PrettyPrint.log("Сажает культуру", this.name);
+        grainCulture.plant();
+        return grainCulture;
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        CommunityPerson other = (CommunityPerson) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.name.equals(other.name) &&
+                this.bag.equals(other.bag);
+    }
+    
+    @Override
+    public int hashCode() {
+        return 13 * Objects.hashCode(this.name) + 5 * Objects.hashCode(this.bag);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[name="+name
+                + ",bag="+ bag.toString()
+                + "]";
+    }
+}=== ./abstractClasses/GrainCulture.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.abstractClasses;
+
+import com.ssnagin.sem1lab3uml.PrettyPrint;
+import com.ssnagin.sem1lab3uml.enums.GrainStatus;
+import com.ssnagin.sem1lab3uml.interfaces.Harvestable;
+import com.ssnagin.sem1lab3uml.interfaces.Plantable;
+import java.util.Objects;
+
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public abstract class GrainCulture implements Harvestable, Plantable {
+    public int amount;
+    public int originalAmount;
+    
+    protected GrainStatus status;
+    
+    public abstract void harvest();
+    
+    public abstract void plant();
+    
+    public GrainCulture(int originalAmount) {
+        this.amount = 0;
+        this.originalAmount = originalAmount;
+        
+        setStatus(GrainStatus.NOT_PLANTED);
+    }
+    
+    public void setStatus(GrainStatus status) {
+        PrettyPrint.log("Изменило статус на " + status.toString(), "ЗК");
+        this.status = status;
+    }
+    public GrainStatus getStatus() {
+        return this.status;
+    }
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        GrainCulture other = (GrainCulture) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.amount == other.amount &&
+                this.originalAmount == other.originalAmount &&
+                this.status.equals(other.status);
+    }
+        
+    @Override
+    public int hashCode() {
+        return 4 * Objects.hashCode(this.amount) +
+                3 * Objects.hashCode(this.originalAmount) + 
+                2 * Objects.hashCode(this.status);
+//        return Objects.hash(this.amount, this.originalAmount, this.status);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[amount=" + Integer.toString(amount)
+                + ",originalAmount=" + Integer.toString(originalAmount)
+                + "grainStatus=" + status.toString()
+                + "]";
+    }
+}
+=== ./PrettyPrint.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public final class PrettyPrint {
+
+    public static void log(Object text) {
+        PrettyPrint.log(text.toString(), "       ");
+    }
+
+    public static void log(Object text, String leftSide) {
+
+        if (leftSide.length() > 7) {
+            leftSide = leftSide.substring(0, 7);
+        } else {
+            for (int i = 0; i < 7 - leftSide.length(); i++) {
+                leftSide += " ";
+            }
+        }
+
+        String prepared = leftSide + "| " + text.toString();
+        PrettyPrint.print(prepared);
+    }
+
+    public static void print(Object text) {
+        System.out.println(text.toString());
+    }
+}
+=== ./Main.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml;
+
+import java.nio.charset.Charset;
+import com.ssnagin.sem1lab3uml.classes.World;
+
+/**
+ *
+ * @author developer
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        World world = new World();
+        world.runSimulation();
+    }
+}
+=== ./lol.txt ===
+=== ./exceptions/StorageOverflow.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Exception.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.exceptions;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public class StorageOverflow extends Exception {
+
+    /**
+     * Creates a new instance of <code>StorageOwerflow</code> without detail
+     * message.
+     */
+    public StorageOverflow() {}
+
+    /**
+     * Constructs an instance of <code>StorageOwerflow</code> with the specified
+     * detail message.
+     *
+     * @param msg the detail message.
+     */
+    public StorageOverflow(String msg) {
+        super(msg);
+    }
+    
+    @Override
+    public String getMessage() {
+        return "Нельзя складывать столько вещей, иначе хранилище заполнится!";
+    }
+}
+=== ./enums/GrainStatus.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.enums;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public enum GrainStatus {
+    HARVESTED,
+    GROWED,
+    GROWING,
+    NOT_PLANTED
+}
+=== ./enums/Size.java ===
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
+ */
+package com.ssnagin.sem1lab3uml.enums;
+
+/**
+ *
+ * @author DEVELOPER
+ */
+public enum Size {
+    INFINITY,
+    EMPTY
+}

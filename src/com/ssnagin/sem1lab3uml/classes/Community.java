@@ -9,6 +9,7 @@ import com.ssnagin.sem1lab3uml.abstractClasses.CommunityPerson;
 import com.ssnagin.sem1lab3uml.abstractClasses.GrainCulture;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -20,16 +21,21 @@ public class Community {
     public List<CommunityPerson> memberList = new ArrayList<CommunityPerson>();
 
     public Community() {
-        PrettyPrint.log("Успешно сформировалась", "ОБЩИНА");
+        this(null);
     }
 
     public Community(List<CommunityPerson> people) {
-        this();
-        this.memberList.addAll(people);
+        if (people != null) {
+            this.addMembers(people);
+        }
+        
+        PrettyPrint.log("Успешно сформировалась", "ОБЩИНА");
     }
 
     public void addMember(CommunityPerson person) {
-        PrettyPrint.log("Появился", person.name);
+        PrettyPrint.log("Появился с сумкой на " + 
+        Integer.toString(person.bag.getCapacity()) + 
+        " ед. емкости", person.name);
         this.memberList.add(person);
     }
     
@@ -79,7 +85,6 @@ public class Community {
         }
         
         PrettyPrint.log("Закончила собирать урожай в кол-ве " + grainStorage.calculateTotalWeight(), "ОБЩИНА");
-
     }
 
     public void doSomeWork() {
@@ -94,8 +99,34 @@ public class Community {
             person.makeBaskets();
         }
     }
-
-    public void getsupplyStatus(List<GrainCulture> grainCultures) {
-
+    
+    @Override
+    public boolean equals(Object otherObject) {
+        // 0. Проверка объектов на идентичность
+        if (this == otherObject) return true;
+        
+        // 1. Возвратить логическое значение false если null
+        if (otherObject == null) return false;
+        
+        // 2. Классы не совпадают если они не равны
+        if (getClass() != otherObject.getClass()) return false;
+        
+        Community other = (Community) otherObject;
+        
+        // 3. Проверка на одинаковые значения
+        return this.memberList.equals(other.memberList);
     }
+    
+    @Override
+    public int hashCode() {
+        return 8 * Objects.hashCode(this.memberList);
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getName()
+                + "[memberList="+memberList.toString()
+                + "]";
+    }
+    
 }

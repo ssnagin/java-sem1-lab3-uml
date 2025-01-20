@@ -43,9 +43,9 @@ public class World {
         CommunityPerson me = new MainCharacter("Ггерой");
         
         people.add(me); // я
-        people.add(new SpannishDude("Славянин", me)); // испанец
+        people.add(new SpannishDude("ИспанеЦ", me)); // испанец
         
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 13; i++) {
             people.add(new Member("Чел " + Integer.toString(i + 1)));
         }
         

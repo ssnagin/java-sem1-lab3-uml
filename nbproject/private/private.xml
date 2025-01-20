@@ -7,16 +7,18 @@
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/GrainStorage.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Community.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Basket.java</file>
+            <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/Main.java</file>
+            <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/interfaces/Storable.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/SpannishDude.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/abstractClasses/GrainCulture.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Bag.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/MainCharacter.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Bread.java</file>
-            <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/BreadStorage.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/World.java</file>
-            <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Member.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/abstractClasses/CommunityPerson.java</file>
+            <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Member.java</file>
             <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/classes/Barley.java</file>
+            <file>file:/home/developer/Projects/github/ssnagin/java-sem1-lab3-uml/src/com/ssnagin/sem1lab3uml/PrettyPrint.java</file>
         </group>
     </open-files>
 </project-private>

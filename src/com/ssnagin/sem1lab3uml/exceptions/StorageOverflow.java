@@ -14,8 +14,7 @@ public class StorageOverflow extends Exception {
      * Creates a new instance of <code>StorageOwerflow</code> without detail
      * message.
      */
-    public StorageOverflow() {
-    }
+    public StorageOverflow() {}
 
     /**
      * Constructs an instance of <code>StorageOwerflow</code> with the specified
@@ -25,5 +24,10 @@ public class StorageOverflow extends Exception {
      */
     public StorageOverflow(String msg) {
         super(msg);
+    }
+    
+    @Override
+    public String getMessage() {
+        return "Нельзя складывать столько вещей, иначе хранилище заполнится!";
     }
 }

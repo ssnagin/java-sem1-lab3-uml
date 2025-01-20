@@ -14,6 +14,4 @@ public class Member extends CommunityPerson {
     public Member(String name) {
         super(name);
     }
-    
-    
 }

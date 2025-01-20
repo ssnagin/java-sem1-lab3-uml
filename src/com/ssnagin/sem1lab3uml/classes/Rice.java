@@ -15,7 +15,6 @@ import com.ssnagin.sem1lab3uml.enums.GrainStatus;
 public class Rice extends GrainCulture {
     
     public final String NAME = "РИС";
-
     
     public Rice(int amount) {
         super(amount);
@@ -26,6 +25,7 @@ public class Rice extends GrainCulture {
         PrettyPrint.log("Был посажен в количестве " + Integer.toString(originalAmount) + 
                 "", this.NAME);
         setStatus(GrainStatus.GROWED);
+        
     }
         
     @Override
